@@ -58,7 +58,7 @@ stars = ImageClip('stars.jpg')
 
 # SCROLL THE TEXT IMAGE BY CROPPING A MOVING AREA
 
-txt_speed = 27
+txt_speed = 100
 fl = lambda gf,t : gf(t)[int(txt_speed*t):int(txt_speed*t)+h,:]
 moving_img= stars.fl(fl, apply_to=['mask'])
 
@@ -107,7 +107,7 @@ final = warped_img
 
 # WRITE TO A FILE
 
-final.duration(10).write_videofile("starworms.mp4", fps=5)
+final.set_duration(10).write_videofile("starworms.mp4", fps=5)
 
 # This script is heavy (30s of computations to render 8s of video)
 
